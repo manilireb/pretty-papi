@@ -2,7 +2,7 @@
 The pretty-papi header library allows you to benchmark  [PAPI](https://icl.utk.edu/papi/) hardware counters in your code with a similar interface and similar output as [Google Benchmark](https://github.com/google/benchmark).
 
 ## Usage
-Just include the headerlibrary
+Just include the header library
 ```cpp
 #include "prettypapi.hpp"
 ```
