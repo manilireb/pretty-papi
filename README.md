@@ -7,7 +7,7 @@ Just include the header library
 #include "prettypapi.hpp"
 ```
 
-Then register your [PAPI](https://icl.utk.edu/papi/) hardware counters using the `REGISTER_BENCHMARK` macro e.g.
+Then register your [PAPI](https://icl.utk.edu/papi/) hardware counters using the `REGISTER_PAPI` macro e.g.
 ```cpp
 REGISTER_PAPI(PAPI_TOT_CYC, PAPI_L1_TCM);
 ```
@@ -15,7 +15,7 @@ Define a function that executes the code to measure with the following signature
 ```cpp
 void some_name(papi::event_code eventset, papi::papi_counter *counter)
 ```
-The code you want to measure should be executed between the macros `PAPI_START` and `PAPI_OVER`. Initializations and clean ups you want to exclude from the benchmark can be define within the function before and after those macros respectively.  
+The code you want to measure should be executed between the macros `PAPI_START` and `PAPI_OVER`. Initializations and clean ups you want to exclude from the benchmark can be defined within the function before and after those macros respectively.  
 At the end register your functions by using the `PAPI_MAIN` macro.
 ```cpp
 PAPI_MAIN(some_name);
@@ -53,5 +53,5 @@ PAPI_MAIN(BM_reduction_naive, BM_reduction_opt);
 ```
 
 ## Output
-The example from above on my machine gives me the following output:  
+The example from above gives an output like this:  
 ![Screenshot](screenshot.png)
